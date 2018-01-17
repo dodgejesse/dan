@@ -20,4 +20,5 @@ cd preprocess
 python sentiment_trees.py
 python load_embeddings.py
 
+cd ../
 mv data/sentiment_We data/sentiment_all_We
