@@ -137,7 +137,7 @@ def objective_and_grad(data, params, d, dh, len_voc, deep, labels, f=relu, df=dr
 
 
 if __name__ == '__main__':
-
+    start_time = time.time()
     # command line arguments
     parser = argparse.ArgumentParser(description='sentiment DAN')
     parser.add_argument('-data', help='location of dataset', default='data/sentiment/')
@@ -260,3 +260,4 @@ if __name__ == '__main__':
     # compute test score
     params = unroll_params(r, d, dh, len_voc, deep = args['deep'], labels=args['labels'])
     t_score = validate(test, 'test', params, args['deep'])
+    print("total time: {}".format(time.time() - start_time))
